@@ -1,0 +1,122 @@
+/*Reset*/
+*, *:before, *:after{margin: 0; padding: 0;box-sizing:border-box; -webkit-box-sizing:border-box;}
+
+/*Header*/
+.header{
+    position: fixed;
+    width: 100%;
+    padding-top: 20px; 
+    padding-bottom: 20px;
+    z-index: 6;
+    background-color: black; 
+    font-family: "Trirong", serif;
+}
+
+.content{ /*Será a margem máxima do texto entre a esquerda e direita padrão*/
+    max-width: 960; 
+    width: 90%;
+    margin: 0 auto; /*auto to center to left and right*/
+}
+
+.header .navv{
+    float: left;
+    margin-top: 20px;
+}
+
+.header .navv ul li{
+    display: inline-block; /*Put the icon in line*/
+    margin-right: calc( 10px + ( 20 - 10 ) * (( 100vw - 320px ) / ( 1200 - 320 )));
+}
+
+.header .navv ul li a{
+    font-size: calc( 20px + ( 40 - 20 ) * (( 100vw - 320px ) / ( 1200 - 320 )));
+    color: white;
+}
+
+.header .navv ul li a:hover{
+    color: white;
+    border-bottom: 4px solid white;
+    -webkit-border-radius: 20%;
+    border-radius: 20%;
+	transition-duration: 0.2s;
+    animation: pulsate 0.2s ease-in-out infinite alternate; 
+    
+}
+
+@media (max-width: 767.9px){
+        
+    /*menu*/
+    .nav-toggle{
+        color: white;
+        font-size: calc( 16px + ( 22 - 16 ) * (( 100vw - 320px ) / ( 1200 - 320 )));
+        margin-top: 20px;
+        border: 1px solid black;
+    }
+
+    .nav-close{
+        font-size: calc( 16px + ( 18 - 16 ) * (( 100vw - 320px ) / ( 1200 - 320 )));
+        color: black;
+    }
+
+    .header .nav.active{
+        right: 0%;
+    }
+
+    .header .nav{
+        /*display: none; If the Display is none, it won't appear anything.*/
+        background: white;
+        height: 100%;
+        position: fixed;
+        padding: 15px;
+        right: -100%;
+        top: 0;
+        z-index: 10;
+        transition: right .7s ease-in-out;
+    }
+
+    .header .nav ul li{
+        background-color: black;
+        padding: 15px 3px;
+        font-size: calc( 13px + ( 18 - 13 ) * (( 100vw - 320px ) / ( 1200 - 320 )));
+        border-bottom: 2px solid black;
+    }
+
+    .header .nav ul li a{
+        color: white;
+    }
+
+
+}
+
+
+
+@media (min-width: 768px){
+
+    .nav-toggle, .nav-close{
+        display: none;
+    }
+
+    .header .nav{
+        float: right;
+        margin-top: 30px;
+    }
+
+    .header .nav ul li{
+        display: inline-block;
+        margin-left: 20px;
+    }
+
+    .header .nav ul li a{
+        font-size: calc( 18px + ( 22 - 18 ) * (( 100vw - 320px ) / ( 1200 - 320 )));
+        color: white;
+    }
+
+    .header .nav ul li a:hover{
+        color: white;
+        border-bottom: 4px solid white;
+        -webkit-border-radius: 20%;
+        border-radius: 20%;
+        transition-duration: 0.2s;
+        animation: pulsate 0.2s ease-in-out infinite alternate;
+    }
+}
